@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Про ремонт — ремонт квартир в Иркутске</title>
+<meta name="description" content="Знакомство с компанией «Про ремонт»: кто мы, что делаем и почему нам доверяют.">
+<!-- Превью ссылки в Telegram, WhatsApp, ВК -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Про ремонт — ремонт квартир в Иркутске">
+<meta property="og:description" content="Знакомство с компанией: кто мы, что делаем и почему нам доверяют">
+<meta property="og:image" content="https://proremont38.ru/cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--ink:#1d1f22;--paper:#f6f2ec;--sand:#d8c7a8;--acc:#c8693c;--muted:#6f6a63;--line:rgba(0,0,0,.1)}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font:400 17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--paper)}
+.deck{height:100vh;height:100dvh;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.slide{min-height:100vh;min-height:100dvh;scroll-snap-align:start;display:flex;align-items:center;padding:96px clamp(24px,8vw,128px) 80px;position:relative}
+.in{max-width:1100px;width:100%;margin:0 auto}
+.dark{background:var(--ink);color:#f3efe8}
+.kicker{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin-bottom:24px}
+h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.02em;margin:0 0 24px}
+h1{font-size:clamp(44px,7vw,88px);line-height:1.02}
+p.sub{font-family:Georgia,serif;font-size:clamp(24px,2.6vw,34px);margin:-8px 0 24px;color:var(--sand)}
+h2{font-size:clamp(32px,4.4vw,56px);line-height:1.1}
+p.lead{font-size:clamp(17px,1.6vw,20px);max-width:58ch;color:inherit;opacity:.85;margin:0 0 32px}
+.top{position:fixed;inset:0 0 auto;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:20px clamp(24px,4vw,48px);pointer-events:none}
+.logo{font-family:Georgia,serif;font-size:22px;pointer-events:auto;mix-blend-mode:difference;color:#fff;text-decoration:none}
+.logo b{font-weight:400}
+.count{font-size:14px;letter-spacing:.08em;mix-blend-mode:difference;color:#fff}
+.dots{position:fixed;right:clamp(12px,2vw,28px);top:50%;transform:translateY(-50%);z-index:10;display:flex;flex-direction:column;gap:12px}
+.dots button{width:10px;height:10px;border-radius:50%;border:1px solid #8f8a82;background:transparent;padding:0;cursor:pointer;transition:all .25s}
+.dots button.on{background:var(--acc);border-color:var(--acc);transform:scale(1.3)}
+.cover{background:radial-gradient(120% 90% at 85% 20%,#3a3229 0%,#1d1f22 60%)}
+.cover .chip{display:inline-flex;gap:8px;align-items:center;padding:8px 16px;border:1px solid rgba(255,255,255,.25);border-radius:99px;font-size:14px;margin-bottom:32px}
+.cover .chip i{width:8px;height:8px;border-radius:50%;background:var(--acc)}
+.hint{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:.6;animation:b 2s infinite}
+@keyframes b{50%{transform:translate(-50%,6px)}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 32px;border-radius:4px;background:var(--acc);color:#fff;font-weight:600;text-decoration:none;font-size:15px;letter-spacing:.04em}
+.btn.line{background:transparent;border:1px solid currentColor;color:inherit}
+.row{display:flex;flex-wrap:wrap;gap:16px}
+.grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:16px}
+.card{padding:32px;border:1px solid var(--line);border-radius:8px;background:#fff}
+.dark .card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12)}
+.card b{display:block;font-family:Georgia,serif;font-size:clamp(36px,4vw,48px);font-weight:400;line-height:1;margin-bottom:8px;color:var(--acc)}
+.card h3{font-size:20px;margin:0 0 8px;font-weight:600}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.dark .card p{color:#bdb6ab}
+.split{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,6vw,96px);align-items:center}
+.pic{aspect-ratio:4/5;border-radius:8px;background:linear-gradient(160deg,#e9dfcf,#cdb894 60%,#a98e64);position:relative;overflow:hidden}
+.pic::after{content:"Фото объекта";position:absolute;left:16px;bottom:16px;font-size:13px;color:rgba(0,0,0,.55);letter-spacing:.06em}
+.steps{counter-reset:s;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin-top:16px}
+.steps div{counter-increment:s;padding-top:24px;border-top:2px solid var(--sand)}
+.steps div::before{content:"0" counter(s);display:block;font-family:Georgia,serif;font-size:32px;color:var(--acc);margin-bottom:8px}
+.steps h3{margin:0 0 4px;font-size:18px}
+.steps p{margin:0;font-size:15px;color:var(--muted)}
+.offer{background:linear-gradient(135deg,#c8693c,#a4502a);color:#fff}
+.offer .kicker{color:#ffe1cf}
+.offer .card{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25)}
+.offer .card p{color:#ffe9dd}
+.offer .btn{background:#fff;color:var(--acc)}
+.contacts a.big{display:block;font-family:Georgia,serif;font-size:clamp(28px,4vw,48px);color:inherit;text-decoration:none;margin-bottom:8px}
+.demo{position:absolute;bottom:20px;left:0;right:0;text-align:center;font-size:13px;opacity:.5}
+@media (max-width:760px){.deck{scroll-snap-type:y proximity}.split{grid-template-columns:1fr}.pic{aspect-ratio:16/10}.dots{display:none}.slide{padding-top:88px}}
+</style>
+</head>
+<body>
+<header class="top"><a class="logo" href="#s1">Про&nbsp;<b>ремонт</b></a><span class="count" id="count">01 / 07</span></header>
+<nav class="dots" id="dots" aria-label="Слайды"></nav>
+
+<main class="deck" id="deck">
+
+<section class="slide cover dark" id="s1">
+  <div class="in">
+    <span class="chip"><i></i>Для покупателей ЖК «Название»</span>
+    <h1>Про&nbsp;ремонт</h1>
+    <p class="sub">Ремонт квартир под&nbsp;ключ в&nbsp;Иркутске</p>
+    <p class="lead">Познакомьтесь с&nbsp;командой, которая сделает ремонт в&nbsp;вашей новой квартире: от&nbsp;замера до&nbsp;уборки, по&nbsp;договору и&nbsp;с&nbsp;фиксированной сметой.</p>
+    <div class="row"><a class="btn" href="#s7">Связаться с&nbsp;нами</a><a class="btn line" href="#s2">Листать презентацию</a></div>
+  </div>
+  <span class="hint">Листайте вниз ↓</span>
+</section>
+
+<section class="slide" id="s2">
+  <div class="in split">
+    <div>
+      <span class="kicker">О компании</span>
+      <h2>Делаем ремонт так, как сделали бы для&nbsp;себя</h2>
+      <p class="lead">«Про ремонт»&nbsp;— иркутская компания полного цикла. Работаем с&nbsp;новостройками и&nbsp;вторичным жильём, ведём объект от&nbsp;первой встречи до&nbsp;сдачи ключей.</p>
+      <div class="grid">
+        <div class="card"><b>8&nbsp;лет</b><p>на&nbsp;рынке (пример)</p></div>
+        <div class="card"><b>250+</b><p>квартир сдано (пример)</p></div>
+      </div>
+    </div>
+    <div class="pic" role="img" aria-label="Место для фото объекта"></div>
+  </div>
+</section>
+
+<section class="slide dark" id="s3">
+  <div class="in">
+    <span class="kicker">Что мы делаем</span>
+    <h2>Всё для&nbsp;готовой к&nbsp;жизни квартиры</h2>
+    <div class="grid">
+      <div class="card"><h3>Ремонт под&nbsp;ключ</h3><p>Черновые и&nbsp;чистовые работы, инженерия, отделка.</p></div>
+      <div class="card"><h3>Дизайн-проект</h3><p>Планировка, визуализации, подбор материалов.</p></div>
+      <div class="card"><h3>Электрика и&nbsp;сантехника</h3><p>Разводка, щиток, монтаж оборудования.</p></div>
+      <div class="card"><h3>Чистовая отделка</h3><p>Плитка, полы, стены, потолки, двери.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="s4">
+  <div class="in">
+    <span class="kicker">Как мы работаем</span>
+    <h2>Пять шагов до&nbsp;новоселья</h2>
+    <div class="steps">
+      <div><h3>Замер</h3><p>Бесплатно приезжаем в&nbsp;квартиру.</p></div>
+      <div><h3>Смета</h3><p>Фиксируем цену и&nbsp;сроки.</p></div>
+      <div><h3>Договор</h3><p>Поэтапная оплата, гарантия.</p></div>
+      <div><h3>Ремонт</h3><p>Фото- и&nbsp;видеоотчёты каждую неделю.</p></div>
+      <div><h3>Сдача</h3><p>Уборка и&nbsp;передача ключей.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide dark" id="s5">
+  <div class="in">
+    <span class="kicker">Почему нам доверяют</span>
+    <h2>Прозрачно на&nbsp;каждом этапе</h2>
+    <div class="grid">
+      <div class="card"><h3>Фиксированная смета</h3><p>Цена в&nbsp;договоре не&nbsp;меняется по&nbsp;ходу работ.</p></div>
+      <div class="card"><h3>Гарантия 2&nbsp;года</h3><p>Устраняем недочёты бесплатно (пример).</p></div>
+      <div class="card"><h3>Свои мастера</h3><p>Без&nbsp;случайных субподрядчиков.</p></div>
+      <div class="card"><h3>Отчёты</h3><p>Видите ход ремонта, даже не&nbsp;приезжая.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide offer" id="s6">
+  <div class="in">
+    <span class="kicker">Для покупателей ЖК</span>
+    <h2>Специальные условия для&nbsp;дольщиков</h2>
+    <p class="lead">Знаем планировки вашего дома и&nbsp;начинаем сразу после получения ключей.</p>
+    <div class="grid">
+      <div class="card"><h3>−10% на&nbsp;работы</h3><p>При заключении договора до&nbsp;сдачи дома (пример).</p></div>
+      <div class="card"><h3>Дизайн в&nbsp;подарок</h3><p>При ремонте под&nbsp;ключ (пример).</p></div>
+      <div class="card"><h3>Приёмка квартиры</h3><p>Поможем проверить квартиру у&nbsp;застройщика.</p></div>
+    </div>
+    <div class="row" style="margin-top:32px"><a class="btn" href="#s7">Записаться на&nbsp;замер</a></div>
+  </div>
+</section>
+
+<section class="slide dark contacts" id="s7">
+  <div class="in">
+    <span class="kicker">Контакты</span>
+    <h2>Обсудим ваш ремонт</h2>
+    <a class="big" href="tel:+70000000000">+7&nbsp;(000)&nbsp;000-00-00</a>
+    <p class="lead">Иркутск · ежедневно 9:00–20:00</p>
+    <div class="row"><a class="btn" href="https://t.me/" target="_blank" rel="noopener">Написать в&nbsp;Telegram</a><a class="btn line" href="tel:+70000000000">Позвонить</a></div>
+  </div>
+  <p class="demo">Демо-пример. Тексты, цифры и&nbsp;контакты — заглушки.</p>
+</section>
+
+</main>
+
+<script>
+const deck=document.getElementById('deck'),slides=[...document.querySelectorAll('.slide')],dots=document.getElementById('dots'),count=document.getElementById('count');
+slides.forEach((s,i)=>{const b=document.createElement('button');b.setAttribute('aria-label','Слайд '+(i+1));b.onclick=()=>s.scrollIntoView({behavior:'smooth'});dots.appendChild(b)});
+const pad=n=>String(n).padStart(2,'0');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const i=slides.indexOf(e.target);[...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i));count.textContent=pad(i+1)+' / '+pad(slides.length)}}),{root:deck,threshold:.55});
+slides.forEach(s=>io.observe(s));
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'})}));
+document.addEventListener('keydown',e=>{const cur=Math.round(deck.scrollTop/innerHeight);if(['ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();slides[Math.min(cur+1,slides.length-1)].scrollIntoView({behavior:'smooth'})}if(['ArrowUp','PageUp'].includes(e.key)){e.preventDefault();slides[Math.max(cur-1,0)].scrollIntoView({behavior:'smooth'})}});
+</script>
+</body>
+</html>
